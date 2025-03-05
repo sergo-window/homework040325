@@ -1,18 +1,17 @@
 public class Main {
     public static void main(String[] args) {
         byte clientOS = 1;
-        short clientDeviceYear = 2013;
+        short clientDeviceYear = 2017;
         if (clientOS == 0 && clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        }
-        if (clientOS == 0 && clientDeviceYear < 2015) {
+        } else if (clientOS == 0 && clientDeviceYear < 2015) {
             System.out.println("Установите облегчённую версию приложения для iOS по ссылке");
-        }
-        if (clientOS == 1 && clientDeviceYear >= 2015) {
+        } else if (clientOS == 1 && clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения для Android по ссылке");
-        }
-        if (clientOS == 1 && clientDeviceYear < 2015) {
+        } else if (clientOS == 1 && clientDeviceYear < 2015) {
             System.out.println("Установите облегчённую версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Ваше устройство не поддерживает данное приложение");
         }
 
         short year = 2024;
@@ -24,16 +23,13 @@ public class Main {
 
         short deliveryDistance = 105;
         short deliveryDays = 1;
-        if (deliveryDistance < 20) {
-            System.out.println("Потребуется " + deliveryDays + " дней доставки");
-        }
-        if (deliveryDistance >= 20 && deliveryDistance < 60) {
-            System.out.println("Потребуется " + (deliveryDays += 1) + " дней доставки");
-        }
-        if (deliveryDistance >= 60 && deliveryDistance <= 100) {
-            System.out.println("Потребуется " + (deliveryDays += 2) + " дней доставки");
-        }
-        if (deliveryDistance > 100) {
+        if (deliveryDistance <= 20) {
+            System.out.println("Потребуется дней: " + deliveryDays);
+        } else if (deliveryDistance <= 60) {
+            System.out.println("Потребуется дней: " + (deliveryDays + 1));
+        } else if (deliveryDistance <= 100) {
+            System.out.println("Потребуется дней: " + (deliveryDays + 2));
+        } else {
             System.out.println("Доставки нет");
         }
 
